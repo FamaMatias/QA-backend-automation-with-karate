@@ -6,15 +6,17 @@ Feature: service client POST
   Background: consume service
     * url url
 
-Scenario: check the service POST Method
-  * def requestCreate = {"name": '#(name)',"job": '#(job)',"id": '#(idPost)',"createdAt": '#(createdAt)'}
-  * def responsesPost = read('classpath:karate/request/responsePost.json')
+    Scenario: check the service POST Method
 
-  Given path "users"
-  And request requestCreate
-  When method post
-  Then status 201
-  And match response == responsesPost
-  And assert response.name == name
-  And assert response.job == job
-  And assert response.id == idPost
+      * def requestCreate = {"name": '#(name)',"job": '#(job)',"id": '#(idPost)',"createdAt": '#(createdAt)'}
+      * def responsesPost = read('classpath:karate/request/responsePost.json')
+
+      Given path "users"
+      And request requestCreate
+      When method post
+      Then status 201
+      And match response == responsesPost
+      And assert response.name == name
+      And assert response.job == job
+      And assert response.id == idPost
+      And assert response.createdAt == createdAt

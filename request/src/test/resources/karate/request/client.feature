@@ -20,3 +20,15 @@ Feature: Service client Get
       And assert response.data.first_name == first_name
       And assert response.data.last_name == last_name
       And assert response.data.avatar == avatar
+
+    Scenario Outline: Users a not exist
+
+      Given path "users",<idUser>
+      When method get
+      Then status <statusCode>
+
+      Examples:
+      | idUser    | statusCode |
+      | 1996      | 404        |
+      | "Q#$%&/"  | 404        |
+      | "miguel"  | 404        |
