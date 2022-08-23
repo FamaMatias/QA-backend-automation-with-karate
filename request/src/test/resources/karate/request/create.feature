@@ -19,9 +19,6 @@ Feature: service client POST
       And assert response.name == name
       And assert response.job == job
       And assert response.id == idPost
-<<<<<<< HEAD
-      
-=======
 
   Scenario Outline: Check the service POST method with users a not exist
 
@@ -41,4 +38,4 @@ Feature: service client POST
       | @#$%&. |  @#$%&. |
       |  matia |  matia  |
       |    " " | ""      |
->>>>>>> 5d7556b51057dcc7d20383c2bc1d1fa776506a9a
+
