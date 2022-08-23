@@ -19,4 +19,22 @@ Feature: service client POST
       And assert response.name == name
       And assert response.job == job
       And assert response.id == idPost
-      And assert response.createdAt == createdAt
+
+  Scenario Outline: Check the service POST method with users a not exist
+
+    * def requestCreate = { "name": "#(name)","job": "#(job)" }
+
+    * def responsePost = read ('classpath:karate/request/responsePost.json')
+
+    Given path 'users'
+    And request requestCreate
+    And params { "name": <name>, "job": <job> }
+    When method post
+    Then status 201
+
+    Examples:
+
+      | name   |   job   |
+      | @#$%&. |  @#$%&. |
+      |  matia |  matia  |
+      |    " " | ""      |
