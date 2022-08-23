@@ -19,4 +19,4 @@ Feature: service client POST
       And assert response.name == name
       And assert response.job == job
       And assert response.id == idPost
-      And assert response.createdAt == createdAt
+      
