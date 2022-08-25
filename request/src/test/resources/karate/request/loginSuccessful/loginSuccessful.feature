@@ -8,7 +8,7 @@ Feature: service client POST
 
   Scenario Outline: check the service with validate email and password using method POST
 
-    * def responsesPost = read('classpath:karate/request/response_post_successful.json')
+    * def responsesPost = read('classpath:karate/request/loginSuccessful/responseLoginSuccessful.json')
 
     Given path "login"
     And request

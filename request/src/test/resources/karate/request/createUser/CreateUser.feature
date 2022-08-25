@@ -9,7 +9,7 @@ Feature: service client POST
     Scenario: check the service POST Method
 
       * def requestCreate = {"name": '#(name)',"job": '#(job)',"id": '#(idPost)',"createdAt": '#(createdAt)'}
-      * def responsesPost = read('classpath:karate/request/responsePost.json')
+      * def responsesPost = read('classpath:karate/request/Create/responsePost.json')
 
       Given path "users"
       And request requestCreate
@@ -22,9 +22,8 @@ Feature: service client POST
 
   Scenario Outline: Check the service POST method with users a not exist
 
-    * def requestCreate = { "name": "#(name)","job": "#(job)" }
-
-    * def responsePost = read ('classpath:karate/request/responsePost.json')
+    * def requestCreate = read('classpath:karate/request/createUser/dataCreateUser.json')
+    * def responsePost = read ('classpath:karate/request/Create/responsePost.json')
 
     Given path 'users'
     And request requestCreate
