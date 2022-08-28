@@ -8,19 +8,15 @@ Feature: service client POST
 
   Scenario Outline: check the service with validate email and password using method POST
 
-    * def responsesPost = read('classpath:karate/request/loginSuccessful/responseLoginSuccessful.json')
+    * def responsePost = read('classpath:karate/request/loginSuccessful/responseLoginSuccessful.json')
+    * def requestBody = {"email":'#(email)',"password":'#(password)'}
 
     Given path "login"
-    And request
-    """
-    {
-    "email": <email>,
-    "password": <password>
-     }
-    """
+    And request requestBody
+    And params { "email": <email>, "password": <password> }
     When method POST
     Then status 200
-    And match response == responsesPost
+    And match response == responsePost
 
     Examples:
     |email                    |password  |
@@ -33,18 +29,15 @@ Feature: service client POST
 
   Scenario Outline: check the service with invalidate email without password using method POST
 
-    * def responsesPost = read('classpath:karate/request/response_post_unsuccessful.json')
+    * def requestBody = read('classpath:karate/request/loginSuccessful/requestLoginSuccessful.json')
+    * def responsePost = read ('classpath:karate/request/loginSuccessful/responseLoginSuccessfulError.json')
 
     Given path "login"
-    And request
-    """
-    {
-    "email": <email>
-     }
-    """
+    And request requestBody
+    And params { "email": <email> }
     When method POST
     Then status 400
-    And match response == responsesPost
+    And match response == responsePost
 
     Examples:
     |email                    |

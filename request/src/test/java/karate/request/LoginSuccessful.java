@@ -6,6 +6,6 @@ public class LoginSuccessful {
     @Karate.Test
     Karate testSample(){
 
-        return Karate.run("classpath:karate/request/loginSuccessful.feature").relativeTo(getClass());
+        return Karate.run("classpath:karate/request/loginSuccessful/loginSuccessful.feature").relativeTo(getClass());
     }
 }

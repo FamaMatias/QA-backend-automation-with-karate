@@ -8,22 +8,22 @@ Feature: service client POST
 
     Scenario: check the service POST Method
 
-      * def requestCreate = {"name": '#(name)',"job": '#(job)',"id": '#(idPost)',"createdAt": '#(createdAt)'}
-      * def responsesPost = read('classpath:karate/request/Create/responsePost.json')
+      * def requestCreate = read('classpath:karate/request/createUser/requestCreateUser.json')
+      * def responsesPost = read('classpath:karate/request/createUser/responseCreateUser.json')
 
       Given path "users"
       And request requestCreate
       When method post
       Then status 201
       And match response == responsesPost
-      And assert response.name == name
-      And assert response.job == job
-      And assert response.id == idPost
+      And assert response.name == requestCreate.name
+      And assert response.job == requestCreate.job
+      And assert response.id == requestCreate.id
 
   Scenario Outline: Check the service POST method with users a not exist
 
-    * def requestCreate = read('classpath:karate/request/createUser/dataCreateUser.json')
-    * def responsePost = read ('classpath:karate/request/Create/responsePost.json')
+    * def requestCreate = read('classpath:karate/request/createUser/requestCreateUser.json')
+    * def responsePost = read ('classpath:karate/request/createUser/responseCreateUser.json')
 
     Given path 'users'
     And request requestCreate

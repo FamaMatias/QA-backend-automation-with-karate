@@ -6,6 +6,6 @@ public class LoginUnsuccessful {
     @Karate.Test
     Karate testSample(){
 
-        return Karate.run("classpath:karate/request/loginSuccessful.feature").relativeTo(getClass());
+        return Karate.run("classpath:karate/request/loginUnsuccessful/loginUnsuccessful.feature").relativeTo(getClass());
     }
 }

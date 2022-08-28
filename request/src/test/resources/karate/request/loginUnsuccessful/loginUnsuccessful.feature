@@ -9,15 +9,12 @@ Feature: service client POST
   Scenario Outline: check the service with invalidate email without password using method POST
 
   * def responsesPost = read('classpath:karate/request/loginUnsuccessful/responseLoginUnsuccessful.json')
+  * def requestBody = read('classpath:karate/request/loginUnsuccessful/requestLoginUnsuccessful.json')
 
   Given path "login"
-  And request
-  """
-    {
-    "email": <email>
-     }
-   """
-  When method POST
+  And request requestBody
+  And params { "email": <email> }
+  When method POSTq
   Then status 400
   And match response == responsesPost
 
