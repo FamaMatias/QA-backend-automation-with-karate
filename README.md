@@ -16,11 +16,11 @@
 
 ### Table of Contents
 1. [What I am going to do?](#general-info)
-2. [Tools](#technologies)
+2. [Tools](#tools)
 3. [Execution](#execution)
 4. [How to see reports?](#reports)
 
-
+#general-info
 1. ### General Info :mag_right:
 
 ***
@@ -39,7 +39,7 @@
 * In compliance with the pattern SOLID
 
 ***
-
+#tools
 2. ### Tools :briefcase:
 
 * [Intellij IDEA](https://www.jetbrains.com/es-es/idea/)
@@ -60,7 +60,7 @@
 OS : Linux Ubuntu 22.04
 ```
 ***
-
+#execution
 3. ### Execution :keyboard:
 
 En cumplimiento con los principios SOLID debemos realizar la ejecucucion segun la funcionalidad que querramos ver:
@@ -74,7 +74,7 @@ En cumplimiento con los principios SOLID debemos realizar la ejecucucion segun l
 | AllFeatureTest      | all Features     |
 
 ***
-
+#reports
 4. ### How to see reports? :computer:
 
 :one: Nos dirigimos a la carpeta Target y la desplegamos
