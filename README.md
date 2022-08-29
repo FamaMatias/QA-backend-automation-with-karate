@@ -84,6 +84,6 @@ En cumplimiento con los principios SOLID debemos realizar la ejecucucion segun l
 :three: Dar click derecho al archivo "overview-features.html", seleccionar "Open in", "Browser" y seleccionar el navegador.
 
 
-* [Cucumber-Report]()
+* [Cucumber-Report](https://github.com/FamaMatias/QA-backend-automation-with-karate/blob/Feature/log_in_log_out/Cucumber-Report.png)
 
 
