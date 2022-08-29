@@ -21,7 +21,7 @@
 4. [How to see reports?](#reports)
 
 
-1. ### General Info
+1. ### General Info :mag_right:
 
 ***
 
@@ -40,7 +40,7 @@
 
 ***
 
-2. ### Tools 
+2. ### Tools :briefcase:
 
 * [Intellij IDEA](https://www.jetbrains.com/es-es/idea/)
 * [Maven](https://mvnrepository.com/): Version 3.8.1
@@ -61,7 +61,7 @@ OS : Linux Ubuntu 22.04
 ```
 ***
 
-3. ### Execution
+3. ### Execution :keyboard:
 
 En cumplimiento con los principios SOLID debemos realizar la ejecucucion segun la funcionalidad que querramos ver:
 
@@ -75,15 +75,15 @@ En cumplimiento con los principios SOLID debemos realizar la ejecucucion segun l
 
 ***
 
-4. ### How to see reports?
+4. ### How to see reports? :computer:
 
-Nos dirigimos a la carpeta Target y la desplegamos
+:one: Nos dirigimos a la carpeta Target y la desplegamos
 
-Desplegamos la carpeta "Cucumber-html-reports"
+:two: Desplegamos la carpeta "Cucumber-html-reports"
 
-Dar click derecho al archivo "overview-features.html", seleccionar "Open in", "Browser" y seleccionar el navegador.
+:three: Dar click derecho al archivo "overview-features.html", seleccionar "Open in", "Browser" y seleccionar el navegador.
 
 
-
+* [Cucumber-Report]()
 
 
