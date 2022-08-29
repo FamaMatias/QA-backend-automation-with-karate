@@ -14,7 +14,7 @@ Feature: service client POST
   Given path "login"
   And request requestBody
   And params { "email": <email> }
-  When method POSTq
+  When method POST
   Then status 400
   And match response == responsesPost
 
