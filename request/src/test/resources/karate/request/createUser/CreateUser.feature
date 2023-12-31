@@ -8,26 +8,22 @@ Feature: service client POST
 
     Scenario: check the service POST Method
 
-      * def requestCreate = {"name": '#(name)',"job": '#(job)',"id": '#(idPost)',"createdAt": '#(createdAt)'}
-      * def responsesPost = read('classpath:karate/request/responsePost.json')
+      * def requestCreate = read('classpath:karate/request/createUser/requestCreateUser.json')
+      * def responsesPost = read('classpath:karate/request/createUser/responseCreateUser.json')
 
       Given path "users"
       And request requestCreate
       When method post
       Then status 201
       And match response == responsesPost
-      And assert response.name == name
-      And assert response.job == job
-      And assert response.id == idPost
-<<<<<<< HEAD
-      
-=======
+      And assert response.name == requestCreate.name
+      And assert response.job == requestCreate.job
+      And assert response.id == requestCreate.id
 
   Scenario Outline: Check the service POST method with users a not exist
 
-    * def requestCreate = { "name": "#(name)","job": "#(job)" }
-
-    * def responsePost = read ('classpath:karate/request/responsePost.json')
+    * def requestCreate = read('classpath:karate/request/createUser/requestCreateUser.json')
+    * def responsePost = read ('classpath:karate/request/createUser/responseCreateUser.json')
 
     Given path 'users'
     And request requestCreate
@@ -41,4 +37,4 @@ Feature: service client POST
       | @#$%&. |  @#$%&. |
       |  matia |  matia  |
       |    " " | ""      |
->>>>>>> 5d7556b51057dcc7d20383c2bc1d1fa776506a9a
+
